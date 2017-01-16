@@ -1,3 +1,4 @@
-From nginx
-ADD $(pwd)/var/www/html/ /var/www/html
-ADD $(PWD)/etc/nginx/ /etc/nginx/
+From nginx:latest
+MAINTAINER inamuu
+COPY var/www/html /var/www/html
+COPY etc/nginx/ /etc/nginx/
