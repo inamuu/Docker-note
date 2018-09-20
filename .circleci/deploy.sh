@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -ex
 
 eval $(aws ecr get-login --region ap-northeast-1 --no-include-email)
 docker push $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/inamuu-test01:$CIRCLE_SHA1
