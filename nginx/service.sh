@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/etc/init.d/php7.0-fpm start
+/etc/init.d/nginx start
+
+while true
+do
+  sleep 10
+done
