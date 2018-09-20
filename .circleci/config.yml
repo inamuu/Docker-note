@@ -8,4 +8,4 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          command: docker build -t inamuu/nginx-test .
+          command: cd nginx && docker build -t inamuu/nginx-test .
