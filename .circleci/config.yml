@@ -8,6 +8,6 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          command: cd nginx && docker build -t docker build -t $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/inamuu-test01:$CIRCLE_SHA1 .
+          command: cd nginx && docker build -t $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/inamuu-test01:$CIRCLE_SHA1 .
       - run:
           command: cd /root/repo/.circleci/ && ./deploy.sh
