@@ -8,6 +8,15 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: notify to slack
+          command: |
+            curl -X POST \
+            $SLACK_WEBHOOK_URL \
+            -H 'content-type: application/json' \
+            -d '{
+              "text": "Build started!"
+            }'
+      - run:
           name: install aws
           command: |
             sudo pip install awscli
