@@ -12,7 +12,7 @@ Run container that has root privileges.
 docker run --name postfix --rm --privileged -ti centos:6 /bin/bash
 ```
 
-Add ipaddr & hostnameto /etc/hosts in this container.
+Add ipaddr & hostname to /etc/hosts in this container.
 
 ```sh
 vim /etc/hosts
