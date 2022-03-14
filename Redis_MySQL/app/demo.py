@@ -24,7 +24,7 @@ class DB:
 
 
 # Time to live for cached data
-TTL = 100
+TTL = 10
 
 # Read the Redis credentials from the REDIS_URL environment variable.
 REDIS_URL = os.environ.get('REDIS_URL')
@@ -47,8 +47,8 @@ def fetch(sql):
     res = Cache.get(sql)
 
     if res:
-        print('cache data')
-        return json.loads(res)
+        print('Cache Data: {}'.format(json.loads(res)))
+        return ''
 
 
     res = Database.query(sql)
@@ -62,15 +62,14 @@ def city(id):
     res = Cache.hgetall(key)
 
     if res:
-        print('cache data: ')
-        return res
+        print('Cache Data: {}'.format(res))
+        return ''
 
     sql = "SELECT `id`, `name` FROM `city` WHERE `id`=%s"
     res = Database.record(sql, (id,))
 
     if res:
         Cache.hmset(key, res)
-        #Cache.hset(key, mapping=res)
         Cache.expire(key, TTL)
 
     return res

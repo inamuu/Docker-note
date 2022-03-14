@@ -5,6 +5,7 @@ services:
     container_name: app
     command: /bin/bash
     tty: true
+
   db:
     image: mysql:5.7
     container_name: db

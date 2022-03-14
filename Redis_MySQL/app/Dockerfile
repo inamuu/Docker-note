@@ -6,4 +6,7 @@ RUN yum install -y \
 RUN amazon-linux-extras install -y \
     redis6
 
+COPY demo.py /root/demo.py
+COPY requiremtents.txt /root/requiremtents.txt
+
 CMD ['/bin/bash']
