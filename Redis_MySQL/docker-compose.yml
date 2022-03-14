@@ -2,9 +2,12 @@ version: '3'
 services:
   app:
     build: app 
-    command: "/bin/bash"
+    container_name: app
+    command: /bin/bash
+    tty: true
   db:
     image: mysql:5.7
+    container_name: db
     volumes:
       - db_data:/var/lib/mysql
     restart: always
@@ -15,6 +18,7 @@ services:
       MYSQL_PASSWORD: password
   redis:
     image: "redis:latest"
+    container_name: redis
     ports:
       - "6379:6379"
     volumes:
