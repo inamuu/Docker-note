@@ -1,7 +1,7 @@
 FROM --platform=linux/x86_64 mysql:8-debian
 
-#RUN apt-get update
-#RUN apt-get install -y locales-all
+RUN apt-get update
+RUN apt-get -y install locales-all
 
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
